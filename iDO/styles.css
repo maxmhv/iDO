@@ -1,0 +1,42 @@
+body {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+  }  
+
+div {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto
+    
+}
+.writelist {
+    align-content: center;
+}
+
+td.checked {
+    text-decoration: line-through;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: rgb(202, 202, 207);
+    font-size: 18px;
+}
+
+.close {
+    margin-right: auto;
+    margin-left: auto;
+    width: 10%
+}
