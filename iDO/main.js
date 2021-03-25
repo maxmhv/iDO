@@ -4,7 +4,7 @@ var arrayTodo = [];
 
 function clearWarning(){
     document.getElementById("warning").innerHTML="";
-    document.getElementById("writeList").style.borderColor="black";
+    document.getElementById("writeList").style.borderColor="rgb(230, 165, 112";
 }
 
 function createList(){
@@ -20,7 +20,7 @@ function createList(){
         console.log("Submitted too short value");
         document.getElementById("warning").innerHTML="Try writing something longer."
         document.getElementById("writeList").style.borderColor="red";
-        //document.getElementById("writeList").value ="";
+        document.getElementById("writeList").value ="";
     }
     else {
         console.log("Input value: "+text);
@@ -44,7 +44,7 @@ function addComponents(){
     node.id = "listTable"
     var textNode = document.createElement("P");
     textNode.id = "clearList";
-    textNode.innerHTML = "Clear completed items"
+    textNode.innerHTML = "Clear completed tasks"
 
     node.appendChild(textNode);
     document.getElementById("mainCont").appendChild(node);
@@ -61,12 +61,8 @@ function addComponents(){
 }
 
 function addTodo(text){
-    var table = document.getElementById("listTable");
-    var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = text +" <span class='close'>x</span> ";
-    cell1.className = "todoItem";
+    addText(text);
+    addClose();
     console.log("Created list item: "+text);
 
     console.log("Adding dynamic listeners...")
@@ -74,23 +70,43 @@ function addTodo(text){
     list.addEventListener("click", function (ev){
         if (ev.target.tagName === "TD"){
             ev.target.classList.toggle("checked");
+            ev.target.parentElement.classList.toggle("checked");
+            ev.target.children.classList.toggle("checked")
             console.log("Changed item status");
         }
-    }, false);
+    });
 
-    var list2 = document.querySelector("span");
-    list2.addEventListener("click", function(){
-            console.log("Deleted list item");
-            var div = this.parentElement;
-            div.style.display = "none";
+    var list = document.querySelector(".close");
+    list.addEventListener("click", function (ev){
+        console.log("Deleting list item...");
+        ev.target.style.display = "none";
+        ev.target.parentElement.style.display = "none";
+        console.log("Done");
     })
-    console.log("Listeners added")
+    console.log("Added listeners")
+}
+
+function addText(text){
+    var table = document.getElementById("listTable");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = text;
+    cell1.className = "todoItem";
+}
+
+function addClose(){
+    console.log("Adding delete button...")
+    var node = document.getElementsByTagName("tr")[0];
+    var span = document.createElement("TD");
+    span.className = "close";
+    span.innerHTML = "x";
+    node.appendChild(span);
 }
 
 function lsSave(text){
     console.log("Saving into localStorage...");
     arrayTodo.push(text);
-    window.localStorage.setItem("Todos",JSON.stringify(arrayTodo));
+    window.localStorage.setItem("todo",JSON.stringify(arrayTodo));
     console.log("Saved into localStorage")
 
 }

@@ -3,7 +3,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-family: Helvetica, Arial, Verdana, sans-serif;
-  }  
+ }  
+
+h1 {
+    padding-left: 20px;
+    font-size: 50px;
+}
 
 div {
     width: 100%;
@@ -11,16 +16,45 @@ div {
     margin-right: auto
     
 }
-.writelist {
-    align-content: center;
+
+input {
+    align-items: center;
+    width: 70%;
+    height: 40px;
+    float: left;
+    font-size: 15px;
+    border-width: 4px;
+    border-color: rgb(230, 165, 112);
 }
 
-td.checked {
-    text-decoration: line-through;
+#warning {
+    width: 30%;
+    color: red;
+    text-align: center;
+    float: right;
+    font-size: 16px;
+    font-style: italic;
+}
+
+#clearlist {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    background-color: rgb(202, 202, 207);
+    padding: 12px 8px 12px 40px;
+    width: 200px;
+    color: rgb(12, 12, 12);
+}
+
+#clearlist:hover {
+    background-color: rgb(228, 177, 120);
+    font-weight: bold;
 }
 
 table {
-    width: 100%;
+    width: 95%;
 }
 
 td {
@@ -35,8 +69,27 @@ td {
     font-size: 18px;
 }
 
+td.checked {
+    text-decoration: line-through;
+    background-color: grey;
+    color: rgb(238, 238, 238);
+}
+
+.todoItem {
+    width: 90%;
+}
+
 .close {
-    margin-right: auto;
-    margin-left: auto;
+    text-align: center;
+    padding-right: 30px;
     width: 10%
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+td:hover {
+    background-color: rgb(228, 177, 120);
 }
