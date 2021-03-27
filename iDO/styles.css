@@ -4,39 +4,30 @@ body {
     margin-right: auto;
     font-family: Helvetica, Arial, Verdana, sans-serif;
  }  
-
-h1 {
-    padding-left: 20px;
-    font-size: 50px;
-}
-
 div {
     width: 100%;
     margin-left: auto;
     margin-right: auto
     
 }
-
 input {
     align-items: center;
-    width: 70%;
+    width: 100%;
     height: 40px;
-    float: left;
     font-size: 15px;
     border-width: 4px;
     border-color: rgb(230, 165, 112);
+    border-radius: 5px;
 }
-
 #warning {
-    width: 30%;
+    width: 50%;
     color: red;
-    text-align: center;
-    float: right;
+    text-align: left;
     font-size: 16px;
     font-style: italic;
 }
-
 #clearlist {
+    border-radius: 2px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -47,16 +38,35 @@ input {
     width: 200px;
     color: rgb(12, 12, 12);
 }
-
 #clearlist:hover {
     background-color: rgb(228, 177, 120);
     font-weight: bold;
 }
-
 table {
     width: 95%;
 }
-
+::placeholder {
+    font-style: italic;
+}
+#appTitle {
+    z-index: 1;
+    position: absolute;
+    color: coral;
+    text-shadow: 0px 0px 4px rgb(8, 8, 8);
+    padding-top: 20px;
+    padding-left: 50px;
+    font-size: 80px;
+    font-weight: bold;
+}
+#appLogo {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    z-index: -1;
+    opacity: 0.7;
+    height: 150px;
+    display: block;
+    margin-left: 0px;
+}
 td {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -67,29 +77,29 @@ td {
     padding: 12px 8px 12px 40px;
     background: rgb(202, 202, 207);
     font-size: 18px;
+    border-radius: 2px;
 }
-
 td.checked {
     text-decoration: line-through;
     background-color: grey;
     color: rgb(238, 238, 238);
 }
-
 .todoItem {
     width: 90%;
 }
-
-.close {
+td.close {
+    font-weight: bold;
+    background: rgb(202, 202, 207);
+    color: black;
+    text-decoration: initial;
     text-align: center;
     padding-right: 30px;
     width: 10%
 }
-
 .close:hover {
     background-color: #f44336;
     color: white;
 }
-
 td:hover {
     background-color: rgb(228, 177, 120);
 }
