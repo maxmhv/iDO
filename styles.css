@@ -26,7 +26,7 @@ input {
     font-size: 16px;
     font-style: italic;
 }
-#clearlist {
+#clearList {
     border-radius: 2px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -38,7 +38,7 @@ input {
     width: 200px;
     color: rgb(12, 12, 12);
 }
-#clearlist:hover {
+#clearList:hover {
     background-color: rgb(228, 177, 120);
     font-weight: bold;
 }
